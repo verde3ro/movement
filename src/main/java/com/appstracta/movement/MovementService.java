@@ -62,7 +62,7 @@ public class MovementService implements IMovementService {
 				String customer = customers.stream().filter(c -> movementResponse.getIdCustomer().equals(c.getId()))
 						.findAny()
 						.map(c2 -> String.format("%s %s", c2.getFirstName(), c2.getLastName()))
-						.orElse("");
+						.orElse(null);
 
 				movementResponse.setCustomer(customer);
 
